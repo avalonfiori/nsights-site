@@ -1,0 +1,1285 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Tags -->
+    <title>NSights - Inteligência Estratégica com IA | Sua Equipe de IA 24/7</title>
+    <meta name="description" content="NSights: Revolucione sua inteligência estratégica com IA. Combine dados curados com agentes de IA personalizados para insights precisos e decisões estratégicas em tempo real.">
+    <meta name="keywords" content="inteligência artificial, IA estratégica, dados curados, insights de negócios, análise de mercado, expert builder, inteligência competitiva">
+    <meta name="author" content="NSights">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://n-sights.ai/">
+    <meta property="og:title" content="NSights - Inteligência Estratégica com IA | Sua Equipe de IA 24/7">
+    <meta property="og:description" content="Revolucione sua inteligência estratégica com IA. Combine dados curados com agentes de IA personalizados para insights precisos e decisões estratégicas em tempo real.">
+    <meta property="og:image" content="static/images/logo/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://n-sights.ai/">
+    <meta property="twitter:title" content="NSights - Inteligência Estratégica com IA | Sua Equipe de IA 24/7">
+    <meta property="twitter:description" content="Revolucione sua inteligência estratégica com IA. Combine dados curados com agentes de IA personalizados para insights precisos e decisões estratégicas em tempo real.">
+    <meta property="twitter:image" content="static/images/logo/og-image.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="static/images/logo/icon.png">
+    <link rel="canonical" href="https://n-sights.ai/">
+    
+    <!-- Stylesheets -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.7);
+            --text-tertiary: rgba(255, 255, 255, 0.5);
+            --bg-primary: #000000;
+            --bg-secondary: rgba(255, 255, 255, 0.03);
+            --accent: #6366f1;
+            --max-width: 1440px;
+            --header-height: 100px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.5;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--header-height);
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .header .container {
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            height: 80px;
+            filter: brightness(0) invert(1);
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 48px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            transition: all 0.3s ease;
+            opacity: 0.9;
+        }
+
+        .nav-link:hover {
+            color: var(--text-primary);
+            opacity: 1;
+        }
+
+        .login-btn {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            padding: 12px 32px;
+            border-radius: 100px;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .login-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: var(--text-primary);
+            transform: translateY(-1px);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            padding: calc(var(--header-height) + 80px) 0 120px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15), transparent 70%);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        #particles-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+            opacity: 0.6;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+        }
+
+        /* Removendo todos os estilos relacionados ao gráfico */
+        .hero-graph,
+        .graph-line,
+        .graph-dot {
+            display: none;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            line-height: 1;
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.03em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1.25rem, 2.5vw, 1.75rem);
+            color: var(--text-secondary);
+            font-weight: 400;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            margin-bottom: 48px;
+            max-width: 680px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 160px 0;
+            position: relative;
+        }
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 600;
+            margin-bottom: 32px;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+
+        .section-text {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 80px;
+            letter-spacing: -0.01em;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            margin-top: 80px;
+        }
+
+        .feature-item {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .feature-item i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 24px;
+            display: block;
+            opacity: 0.9;
+            transition: transform 0.3s ease;
+        }
+
+        .feature-item:hover i {
+            transform: scale(1.1);
+        }
+
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-4px);
+        }
+
+        .feature-item h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            letter-spacing: -0.01em;
+            line-height: 1.3;
+        }
+
+        .feature-item p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin: 0;
+            font-size: 1.0625rem;
+        }
+
+        /* Visual Elements */
+        .gradient-blur {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: radial-gradient(circle at center, rgba(99, 102, 241, 0.1), transparent 70%);
+            opacity: 0.5;
+            pointer-events: none;
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, 
+                transparent,
+                rgba(255, 255, 255, 0.05),
+                transparent
+            );
+            margin: 0;
+            border: none;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+        }
+
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 1200px) {
+            .container {
+                padding: 0 40px;
+            }
+
+            .section {
+                padding: 140px 0;
+            }
+
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --header-height: 90px;
+            }
+
+            .container {
+                padding: 0 32px;
+            }
+
+            .section {
+                padding: 120px 0;
+            }
+
+            .hero-title {
+                font-size: clamp(2.5rem, 5vw, 4rem);
+            }
+
+            .section-title {
+                font-size: clamp(2rem, 4vw, 3rem);
+            }
+
+            .nav-menu {
+                gap: 32px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            :root {
+                --header-height: 80px;
+            }
+
+            .container {
+                padding: 0 24px;
+            }
+
+            .logo {
+                height: 50px;
+            }
+
+            .hero {
+                padding: calc(var(--header-height) + 40px) 0 60px;
+                min-height: 100vh;
+                display: flex;
+                align-items: flex-start;
+            }
+
+            .hero-content {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .hero-graph {
+                display: none;
+            }
+
+            .nav-menu {
+                display: none;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 24px;
+                z-index: 1000;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                gap: 0;
+            }
+
+            .nav-link {
+                font-size: 1.125rem;
+                padding: 16px 0;
+                display: block;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            }
+
+            .nav-link:last-child {
+                border-bottom: none;
+            }
+
+            .menu-mobile-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 44px;
+                height: 44px;
+                margin-right: 16px;
+                font-size: 24px;
+            }
+
+            .header-right {
+                display: flex;
+                align-items: center;
+            }
+
+            .login-btn {
+                padding: 8px 20px;
+                font-size: 0.875rem;
+            }
+
+            .section {
+                padding: 80px 0;
+            }
+
+            .section-title {
+                font-size: 1.75rem;
+                margin-bottom: 24px;
+            }
+
+            .section-text {
+                font-size: 1rem;
+                margin-bottom: 40px;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                margin-top: 40px;
+            }
+
+            .feature-item {
+                padding: 24px;
+            }
+
+            .feature-item h3 {
+                font-size: 1.25rem;
+                margin-bottom: 12px;
+            }
+
+            .feature-item p {
+                font-size: 0.9375rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+
+            .hero {
+                padding: calc(var(--header-height) + 40px) 0 60px;
+            }
+
+            .hero-title {
+                font-size: clamp(1.75rem, 5vw, 2.5rem);
+            }
+
+            .hero-subtitle {
+                font-size: 1.125rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .feature-item {
+                padding: 24px;
+            }
+
+            .login-btn {
+                padding: 10px 24px;
+                font-size: 0.875rem;
+            }
+        }
+
+        /* Menu Mobile */
+        .menu-mobile-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .menu-mobile-btn {
+                display: block;
+            }
+
+            .nav-menu.active {
+                display: flex;
+                flex-direction: column;
+                position: fixed;
+                top: var(--header-height);
+                left: 0;
+                right: 0;
+                background: rgba(0, 0, 0, 0.95);
+                backdrop-filter: blur(20px);
+                padding: 32px;
+                gap: 24px;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            }
+        }
+
+        .back-to-top {
+            position: absolute;
+            bottom: 40px;
+            right: 40px;
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+            opacity: 0.7;
+            text-decoration: none;
+        }
+
+        .back-to-top:hover {
+            opacity: 1;
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--text-primary);
+        }
+
+        @media (max-width: 768px) {
+            .back-to-top {
+                bottom: 20px;
+                right: 20px;
+                width: 40px;
+                height: 40px;
+                font-size: 1rem;
+            }
+        }
+
+        .contact-form {
+            background: var(--bg-secondary);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 24px;
+            padding: 48px;
+            margin-top: 48px;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 16px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        textarea.form-control {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--accent);
+            color: white;
+            border: none;
+            padding: 16px 48px;
+            border-radius: 100px;
+            font-size: 1.125rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 20px rgba(99, 102, 241, 0.3);
+        }
+
+        @media (max-width: 768px) {
+            .contact-form {
+                padding: 32px 24px;
+            }
+        }
+
+        /* Primeiro, ajustando a cor dos placeholders */
+        .form-control::placeholder {
+            color: var(--text-tertiary);
+        }
+
+        /* Adicionando estilos do footer */
+        .footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 80px 0 40px;
+            margin-top: 80px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+            margin-bottom: 60px;
+        }
+
+        .footer-column h4 {
+            color: var(--text-primary);
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 24px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: all 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+        }
+
+        .social-links a {
+            color: var(--text-secondary);
+            font-size: 1.25rem;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .footer-bottom {
+            padding-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: var(--text-tertiary);
+            font-size: 0.875rem;
+        }
+
+        @media (max-width: 768px) {
+            .footer {
+                padding: 60px 0 32px;
+                margin-top: 60px;
+            }
+
+            .footer-content {
+                gap: 32px;
+            }
+
+            .footer-column h4 {
+                margin-bottom: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="#hero">
+                <img src="static/images/logo/logo.png" alt="NSights Logo" class="logo">
+            </a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                    <li><a href="#experts" class="nav-link">NSights Experts</a></li>
+                    <li><a href="#custom-expert" class="nav-link">Expert Builder</a></li>
+                    <li><a href="#industrias" class="nav-link">Indústrias</a></li>
+                    <li><a href="#contato" class="nav-link">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="header-right">
+                <button class="menu-mobile-btn">
+                    <i class="bi bi-list"></i>
+                </button>
+                <a href="https://app2.n-sights.ai/" class="login-btn">
+                    <i class="bi bi-box-arrow-in-right"></i>
+                    Login
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <canvas id="particles-canvas"></canvas>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title fade-in">
+                    Supercharged AI Workforce + Curated Data = N Possibilities
+                </h1>
+                <p class="hero-subtitle fade-in delay-1">
+                    NSights: Revolucionando a Inteligência Estratégica com IA
+                </p>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Sobre Section (incluindo Valor) -->
+    <section id="sobre" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">Seu Aliado de Inteligência Estratégica com Super Poderes</h2>
+                <p class="section-text fade-in delay-1">
+                    A NSights é muito mais do que apenas mais uma solução de IA. É uma extensão superpoderosa da sua equipe: um universo de dados curados, combinado com agentes de IA sob medida para criar "estrategistas digitais" para funções e setores específicos.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-globe2"></i>
+                        <h3>Alcance Global</h3>
+                        <p>Equipe com atuação global, garantindo insights atualizados e relevantes para cada mercado.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-lightbulb"></i>
+                        <h3>Fundadores Visionários</h3>
+                        <p>Liderados por pioneiros em IA e dados, com um histórico de soluções inovadoras.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Missão Centrada no Cliente</h3>
+                        <p>Soluções precisas e personalizadas alinhadas aos seus objetivos estratégicos.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-infinity"></i>
+                        <h3>Possibilidades Infinitas</h3>
+                        <p>Utilizamos dados curados e insights movidos por IA para garantir sucesso orientado por inteligência.</p>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle fade-in">Nossa Proposta de Valor</h3>
+                <p class="section-text fade-in delay-1">
+                    Transforme sua tomada de decisão com inteligência estratégica de alto impacto.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-bullseye"></i>
+                        <h3>Insights Precisos e Setorizados</h3>
+                        <p>Recomendações personalizadas para sua indústria, função e objetivos.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-lightning-charge"></i>
+                        <h3>Decisões Imediatas</h3>
+                        <p>Inteligência em tempo real para movimentos críticos baseados em dados.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-intersect"></i>
+                        <h3>Integração Transparente</h3>
+                        <p>Integra-se perfeitamente aos seus fluxos de trabalho existentes com relatórios, dashboards e APIs.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>ROI Acelerado</h3>
+                        <p>Reduza ciclos de pesquisa, minimize riscos e alcance resultados de alto valor mais rapidamente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- NSights Experts Section (incluindo Sinergia) -->
+    <section id="experts" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">NSights Experts: Seu Dream Team de IA, 24/7</h2>
+                <p class="section-text fade-in delay-1">
+                    Estrategistas digitais hiperfocados, treinados com dados curados, para entregar insights precisos em tempo recorde.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-cpu"></i>
+                        <h3>Brainpower de Alto Impacto</h3>
+                        <p>M&A scouting, análise de concorrência, due diligence- tudo em questão de minutos.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-lightning-charge"></i>
+                        <h3>Produtividade Ininterrupta</h3>
+                        <p>Análises multifacetadas em larga escala, sem pausas.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-graph-up"></i>
+                        <h3>Precisão Real-Time</h3>
+                        <p>Baseada em fluxos contínuos de dados, sem achismos ou suposições.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-boxes"></i>
+                        <h3>Casos de Uso</h3>
+                        <p>Pré-Due Diligence, Inteligência Competitiva, Eficiência Operacional e além.</p>
+                    </div>
+                </div>
+
+                <h3 class="section-subtitle fade-in">Sinergia de Dados Curados & AI Experts</h3>
+                <p class="section-text fade-in delay-1">
+                    A combinação perfeita entre dados premium e inteligência artificial avançada.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-shield-check"></i>
+                        <h3>Precisão de Dados</h3>
+                        <p>Dados premium selecionados garantem a precisão da IA.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-cpu-fill"></i>
+                        <h3>Expertise em IA</h3>
+                        <p>Agentes digitais transformam dados curados em resultados estratégicos com velocidade super-humana.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-arrow-repeat"></i>
+                        <h3>Refinamento Contínuo</h3>
+                        <p>Atualizações em tempo real e aprendizado iterativo aprimoram o desempenho da IA.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-circle-square"></i>
+                        <h3>Inteligência 360°</h3>
+                        <p>Combina múltiplas fontes de dados premium para uma perspectiva abrangente.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <!-- Custom Expert Builder Section -->
+    <section id="custom-expert" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">Custom Expert Builder: Construa a Sua Própria Equipe de Elite</h2>
+                <p class="section-text fade-in delay-1">
+                    Crie uma força de inteligência em IA personalizada que amadurece com seu negócio, garantindo insights continuamente alinhados e oportunidades estratégicas ilimitadas.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-gear-wide-connected"></i>
+                        <h3>Inteligência Sob Medida</h3>
+                        <p>Crie Especialistas em IA que reflitam as necessidades únicas do seu negócio sem necessidade de programação.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-window-desktop"></i>
+                        <h3>Interface Intuitiva</h3>
+                        <p>Inicie com templates, selecione fontes de dados, defina índices e outputs de forma simples e eficiente.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-bar-chart-steps"></i>
+                        <h3>Níveis de Maturidade</h3>
+                        <p>Desde insights básicos até análises preditivas avançadas, expanda suas capacidades de inteligência conforme seu negócio evolui.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-sliders"></i>
+                        <h3>Personalização Sem Limites</h3>
+                        <p>Cada novo Especialista desbloqueia inteligência especializada, adaptando-se continuamente para atender às suas demandas estratégicas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Indústrias Section -->
+    <section id="industrias" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">Indústrias que Potencializamos</h2>
+                <p class="section-text fade-in delay-1">
+                    Independentemente do seu setor, a NSights fornece inteligência super-humana para dominar seu mercado.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-code-square"></i>
+                        <h3>Tecnologia & Software</h3>
+                        <p>Insights estratégicos para inovação contínua e vantagem competitiva no mercado digital.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-building"></i>
+                        <h3>Private Equity & Venture Capital</h3>
+                        <p>Análise profunda para identificação de oportunidades e avaliação de investimentos.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-shop"></i>
+                        <h3>Varejo & E-Commerce</h3>
+                        <p>Inteligência de mercado para otimização de operações e experiência do cliente.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-heart-pulse"></i>
+                        <h3>Saúde & Farmacêutica</h3>
+                        <p>Análises especializadas para inovação e desenvolvimento no setor de saúde.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-bank"></i>
+                        <h3>Serviços Financeiros & de Seguros</h3>
+                        <p>Insights precisos para gestão de riscos e oportunidades no mercado financeiro.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Por Que Escolher Section -->
+    <section id="porque-escolher" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">Por Que Escolher a NSights?</h2>
+                <p class="section-text fade-in delay-1">
+                    Nossa plataforma combina tecnologia de ponta com expertise humana para entregar resultados excepcionais.
+                </p>
+                
+                <div class="features-grid">
+                    <div class="feature-item fade-in">
+                        <i class="bi bi-graph-up-arrow"></i>
+                        <h3>Índices Proprietários</h3>
+                        <p>Métricas únicas que destilam mercados complexos em oportunidades claras.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-1">
+                        <i class="bi bi-people"></i>
+                        <h3>IA Guiada por Humanos</h3>
+                        <p>Combinação de expertise em ciência de dados com conhecimento prático de negócios.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-2">
+                        <i class="bi bi-gear-wide"></i>
+                        <h3>Soluções Personalizáveis</h3>
+                        <p>Personalize Especialistas em IA para refletir as necessidades únicas do seu negócio sem programação.</p>
+                    </div>
+                    <div class="feature-item fade-in delay-3">
+                        <i class="bi bi-bezier2"></i>
+                        <h3>Integração Transparente</h3>
+                        <p>Inteligência que se integra perfeitamente às suas ferramentas existentes.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Call to Action Section -->
+    <section id="cta" class="section" style="padding: 120px 0;">
+        <div class="container">
+            <div class="section-content text-center" style="text-align: center;">
+                <h2 class="section-title fade-in" style="font-size: clamp(2.5rem, 5vw, 4rem); margin-bottom: 48px;">
+                    Pronto para Desbloquear Suas N Possibilidades?
+                </h2>
+                <a href="#contato" class="login-btn fade-in delay-1" style="font-size: 1.125rem; padding: 16px 48px;">
+                    <i class="bi bi-rocket-takeoff"></i>
+                    Comece Agora
+                </a>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Seção de contato -->
+    <section id="contato" class="section">
+        <div class="container">
+            <div class="section-content">
+                <h2 class="section-title fade-in">Entre em Contato</h2>
+                <p class="section-text fade-in delay-1">
+                    Pronto para revolucionar sua inteligência estratégica? Entre em contato conosco e descubra como a NSights pode potencializar seu negócio.
+                </p>
+                
+                <div class="contact-form fade-in delay-2">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Nome</label>
+                            <input type="text" id="name" class="form-control" placeholder="Seu nome completo" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" id="email" class="form-control" placeholder="seu@email.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="company" class="form-label">Empresa</label>
+                            <input type="text" id="company" class="form-control" placeholder="Nome da sua empresa">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message" class="form-label">Mensagem</label>
+                            <textarea id="message" class="form-control" placeholder="Como podemos ajudar?" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="bi bi-send"></i>
+                            Enviar Mensagem
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="gradient-blur"></div>
+        <a href="#hero" class="back-to-top" title="Voltar ao topo">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </section>
+
+    <hr class="divider">
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h4>NSights</h4>
+                    <ul class="footer-links">
+                        <li><a href="#sobre">Sobre Nós</a></li>
+                        <li><a href="#experts">NSights Experts</a></li>
+                        <li><a href="#custom-expert">Expert Builder</a></li>
+                        <li><a href="#industrias">Indústrias</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Recursos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#blog">Blog</a></li>
+                        <li><a href="#cases">Cases de Sucesso</a></li>
+                        <li><a href="#docs">Documentação</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#privacidade">Política de Privacidade</a></li>
+                        <li><a href="#termos">Termos de Uso</a></li>
+                        <li><a href="#cookies">Política de Cookies</a></li>
+                        <li><a href="#compliance">Compliance</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h4>Conecte-se</h4>
+                    <div class="social-links">
+                        <a href="#" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" title="Twitter"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" title="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="#" title="GitHub"><i class="bi bi-github"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 NSights. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.menu-mobile-btn');
+            const navMenu = document.querySelector('.nav-menu');
+            
+            menuBtn.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                // Alterna o ícone do menu
+                const icon = menuBtn.querySelector('i');
+                if (navMenu.classList.contains('active')) {
+                    icon.classList.remove('bi-list');
+                    icon.classList.add('bi-x-lg');
+                } else {
+                    icon.classList.remove('bi-x-lg');
+                    icon.classList.add('bi-list');
+                }
+            });
+
+            // Fecha o menu ao clicar em um link
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    const icon = menuBtn.querySelector('i');
+                    icon.classList.remove('bi-x-lg');
+                    icon.classList.add('bi-list');
+                });
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const canvas = document.getElementById('particles-canvas');
+            const ctx = canvas.getContext('2d');
+            let animationFrameId;
+            let particles = [];
+            let connections = [];
+
+            function resizeCanvas() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+
+            window.addEventListener('resize', resizeCanvas);
+            resizeCanvas();
+
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width;
+                    this.y = Math.random() * canvas.height;
+                    this.size = Math.random() * 2 + 1;
+                    this.speedX = (Math.random() - 0.5) * 0.5;
+                    this.speedY = (Math.random() - 0.5) * 0.5;
+                    this.life = 1;
+                    this.isAgent = Math.random() > 0.7;
+                }
+
+                update() {
+                    this.x += this.speedX;
+                    this.y += this.speedY;
+
+                    if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+                }
+
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = this.isAgent ? 'rgba(99, 102, 241, 0.8)' : 'rgba(255, 255, 255, 0.5)';
+                    ctx.fill();
+                }
+            }
+
+            function init() {
+                particles = [];
+                const particleCount = Math.min(Math.floor(canvas.width * canvas.height / 10000), 100);
+                
+                for (let i = 0; i < particleCount; i++) {
+                    particles.push(new Particle());
+                }
+            }
+
+            function connect() {
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dx = particles[i].x - particles[j].x;
+                        const dy = particles[i].y - particles[j].y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+
+                        if (distance < 150) {
+                            const opacity = (1 - distance / 150) * 0.3;
+                            ctx.beginPath();
+                            ctx.moveTo(particles[i].x, particles[i].y);
+                            ctx.lineTo(particles[j].x, particles[j].y);
+                            ctx.strokeStyle = `rgba(99, 102, 241, ${opacity})`;
+                            ctx.lineWidth = 0.5;
+                            ctx.stroke();
+                        }
+                    }
+                }
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                
+                particles.forEach(particle => {
+                    particle.update();
+                    particle.draw();
+                });
+                
+                connect();
+                animationFrameId = requestAnimationFrame(animate);
+            }
+
+            init();
+            animate();
+
+            // Cleanup
+            return () => {
+                cancelAnimationFrame(animationFrameId);
+            };
+        });
+    </script>
+</body>
+</html> 
